@@ -61,14 +61,12 @@ return [
             'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
             'after_commit' => false,
         ],
-
         'redis' => [
             'driver' => 'redis',
-            'connection' => 'default',
+            'connection' => 'default', // Make sure 'default' matches your Redis connection name in config/database.php
             'queue' => env('REDIS_QUEUE', 'default'),
             'retry_after' => 90,
             'block_for' => null,
-            'after_commit' => false,
         ],
 
     ],

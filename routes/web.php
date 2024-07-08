@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::get('latest', '\App\Http\Controllers\NewController@latest');
+Route::get('product','\App\Http\Controllers\ProductController@search');

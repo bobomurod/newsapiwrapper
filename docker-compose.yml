@@ -35,7 +35,14 @@ services:
             - dbdata:/var/lib/mysql
         networks:
             - laravel
-
+    elasticsearch:
+        image: docker.elastic.co/elasticsearch/elasticsearch:7.15.1
+        environment:
+            - discovery.type=single-node
+        ports:
+            - 9200:9200
+        networks:
+            - laraelastic
 networks:
     laravel:
         driver: bridge
